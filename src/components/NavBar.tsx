@@ -10,6 +10,19 @@ const NavBar = () => {
 
         <Link href="/articles">Articles</Link>
       </nav>
+      <h2>Logo</h2>
+      <Link href="/" target={'_blank'}>
+        T
+      </Link>
+      <Link href="/" target={'_blank'}>
+        T
+      </Link>
+      <Link href="/" target={'_blank'}>
+        T
+      </Link>
+      <Link href="/" target={'_blank'}>
+        T
+      </Link>
     </header>
   );
 };
