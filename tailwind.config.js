@@ -8,8 +8,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        'spin-slow': 'spin 8s linear infinite',
+      },
       fontFamily: {
         mont: ['var(--font-mont)', ...fontFamily.sans],
+        sans: ['Montserrat', 'sans-serif'],
       },
       colors: {
         dark: '#1b1b1b',
