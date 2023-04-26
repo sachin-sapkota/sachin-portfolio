@@ -2,19 +2,32 @@ import React from 'react';
 import Link from 'next/link';
 import Logo from './Logo';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 interface CustomLinkProps {
   href: string;
   title: string;
-  className?: string;
+  className?: any;
 }
+import {
+  TwitterIcon,
+  DribbleIcon,
+  GithubIcon,
+  LinkedInIcon,
+  PinterestIcon,
+} from './icons';
 
-const CustomLink = ({ href, title, className = '' }: CustomLinkProps) => {
+const CustomLink = ({ href, title, className = ' ' }: CustomLinkProps) => {
   const router = useRouter();
 
   return (
-    <Link href={href} className={`${className} relative group`}>
+    <Link href={href} className={`${className}  group relative`} title={title}>
       {title}
-      <span className="h-[1px] inline-block w-8 bg-dark absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300">
+      <span
+        className={`${
+          router.asPath === href ? 'w-full' : 'w-0'
+        }      rounded-full bg-light absolute left-0  -bottom-0.5 group-hover:w-full ease-linear duration-300`}
+        style={{ height: '1.5px' }}
+      >
         &nbsp;
       </span>
     </Link>
@@ -23,34 +36,63 @@ const CustomLink = ({ href, title, className = '' }: CustomLinkProps) => {
 
 const NavBar = () => {
   return (
-    <header className="relative w-full px-32 py-8 font-medium flex justify-between">
+    <header className=" w-full px-32 py-8 font-medium flex justify-between  ">
       <nav>
-        <Link href="/">Home</Link>
-        <Link href="/about">About</Link>
-        <Link href="/projects">Projects</Link>
-
-        <Link href="/articles">Articles</Link>
+        <CustomLink href="/" title="Home" className="mr-4" />
+        <CustomLink href="/about" title="About" className="mx-4" />
+        <CustomLink href="/projects" title="Projects" className="mx-4" />
+        <CustomLink href="/articles" title="Articles" className="ml-4" />
       </nav>
-      <div
-        className="absolute "
-        style={{ left: '50%', translate: 'translate(-50%, 0)' }}
-      >
+      <div className="absolute top-3 mx-auto inset-x-0">
         <Logo />
       </div>
-      <div>
-        <Link href="/" target={'_blank'}>
-          T
-        </Link>
-        <Link href="/" target={'_blank'}>
-          T
-        </Link>
-        <Link href="/" target={'_blank'}>
-          T
-        </Link>
-        <Link href="/" target={'_blank'}>
-          T
-        </Link>
-      </div>
+      <nav className="flex item-center justify-center flex-wrap ">
+        <motion.a
+          href="/"
+          target={'_blank'}
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-6 mx-3"
+        >
+          <TwitterIcon />
+        </motion.a>
+        <motion.a
+          href="/"
+          target={'_blank'}
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-6 mx-3"
+        >
+          <GithubIcon />
+        </motion.a>
+        <motion.a
+          href="/"
+          target={'_blank'}
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-6 mx-3"
+        >
+          <LinkedInIcon />
+        </motion.a>
+        <motion.a
+          href="/"
+          target={'_blank'}
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-6 mx-3"
+        >
+          <DribbleIcon />
+        </motion.a>
+        <motion.a
+          href="/"
+          target={'_blank'}
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-6 ml-3"
+        >
+          <PinterestIcon />
+        </motion.a>
+      </nav>
     </header>
   );
 };
