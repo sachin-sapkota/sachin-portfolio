@@ -1,5 +1,9 @@
 import Image from 'next/image';
 
 export default function Home() {
-  return <main className="">Hello</main>;
+  return (
+    <div>
+      <div className="text-black">sachin</div>
+    </div>
+  );
 }
