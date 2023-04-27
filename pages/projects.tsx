@@ -4,13 +4,16 @@ import { GithubIcon } from '@/src/components/icons';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import { motion } from 'framer-motion';
+
 import digitizeNepal from '../public/images/digitizenepal_proj.png';
 import jobxa_proj from '../public/images/jobxa_proj.png';
 import detour_proj from '../public/images/detour_proj.png';
 import clinic_expert_proj from '../public/images/clinic_expert.png';
 import x8c_proj from '../public/images/x8c_proj.png';
 import aakhyaan_proj from '../public/images/aakhyan_proj.png';
+
+const FramerImage = motion(Image);
 interface fptype {
   type: string;
   title: string;
@@ -38,7 +41,9 @@ const FeaturedProject = ({
         target="_blank"
         className="w-1/2 cursor-point overflow-hidden rounded-lg"
       >
-        <Image
+        <FramerImage
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.2 }}
           src={image}
           alt={title}
           className="w-full object-cover border-2 border-solid rounded-xl border-dark border-opacity-50 h-auto "
@@ -81,7 +86,9 @@ const Project = ({ type, title, image, link, github }: fptype) => {
           className="absolute inset-0 left-3 -z-10  w-full top-2 -bottom-3 rounded-t-3xl rounded-bl-3xl rounded-b-2xl bg-dark  "
           style={{ zIndex: -10 }}
         />
-        <Image
+        <FramerImage
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.2 }}
           src={image}
           alt={title}
           className="w-full object-cover border-2 border-solid rounded-xl border-dark border-opacity-50 h-auto"
