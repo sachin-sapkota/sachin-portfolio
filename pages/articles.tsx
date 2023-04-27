@@ -5,16 +5,55 @@ import Image from 'next/image';
 import Link from 'next/link';
 import article1 from '../public/images/article1.png';
 import article2 from '../public/images/article2.png';
-import { motion } from 'framer-motion';
+import article3 from '../public/images/article3.png';
+import { motion, useMotionValue } from 'framer-motion';
+import { useRef } from 'react';
 
 const FramerImage = motion(Image);
+const MovingImg = ({ title, img, link }: any) => {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const imgRef = useRef(null);
+  function handleMouse({ event }: any) {
+    imgRef.current.style.display = 'inline-block';
+    x.set(event.pageX);
+  }
+  function handleMouseLeave({ event }: any) {
+    console.log(event.pageX);
+  }
+  return (
+    <Link href={link} target="_blank">
+      <h2 className="capitalize text-xl font-semibold hover:underline ">
+        {title}
+      </h2>
+      <Image
+        ref={imgRef}
+        src={img}
+        alt={title}
+        className="w-96 h-auto hidden absolute rounded-lg"
+      />
+    </Link>
+  );
+};
 interface articleType {
   img: any;
   title: string;
-  time: string;
-  summary: string;
+  time?: string;
+  summary?: string;
+  date?: string;
   link: string;
 }
+
+const Article = ({ img, title, date, link }: articleType) => {
+  return (
+    <li className="relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between text-dark bg-light border border-solid border-dark border-r-4 border-b-4">
+      <MovingImg title={title} img={img} link={link} />
+
+      <span className="text-primary font-semibold pl-4 ">{date}</span>
+    </li>
+  );
+};
+
 const FeatureArticle = ({ img, title, time, summary, link }: articleType) => {
   return (
     <div className=" col-span-1 w-full p-4 bg-light border border-solid border-dark rounded-2xl relative">
@@ -36,7 +75,7 @@ const FeatureArticle = ({ img, title, time, summary, link }: articleType) => {
         />
       </Link>
       <Link href={link} target="_blank">
-        <h2 className="capitalize text-2xl font-bold my-2 hover:underline ">
+        <h2 className="capitalize text-2xl font-bold my-2 mt-4 hover:underline ">
           {title}
         </h2>
       </Link>
@@ -49,8 +88,8 @@ const articles = () => {
   return (
     <>
       <Head>
-        <title>SS | About Me</title>
-        <meta name="description" content="about me"></meta>
+        <title>SS | Articles</title>
+        <meta name="description" content="articles" />
       </Head>
 
       <main className="flex w-full flex-col items-center justify-center overflow-hidden">
@@ -81,6 +120,29 @@ const articles = () => {
               }
               img={article2}
               link={'/'}
+            />
+          </ul>
+          <h2 className="font-bold text-4xl w-full text-center my-16 mt-32">
+            All Articles
+          </h2>
+          <ul>
+            <Article
+              title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
+              img={article3}
+              link="/"
+              date="January 22, 2023"
+            />
+            <Article
+              title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
+              img={article3}
+              link="/"
+              date="January 22, 2023"
+            />
+            <Article
+              title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
+              img={article3}
+              link="/"
+              date="January 22, 2023"
             />
           </ul>
         </Layout>
