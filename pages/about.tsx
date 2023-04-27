@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { useInView, useMotionValue, useSpring } from 'framer-motion';
 import Skills from '@/src/components/Skills';
 import Experience from '@/src/components/Experience';
+import Education from '@/src/components/Education';
 
 const AnimateNumbers = ({ value }: any) => {
   const ref = useRef(null);
@@ -101,7 +102,6 @@ const about = () => {
               </div>
               <div className="flex flex-col items-end justify-center">
                 <span className="inline-block text-7xl font-bold">
-                  {' '}
                   <AnimateNumbers value={4} />+
                 </span>
                 <h2 className="text-xl font-semibold capitalize text-dark opacity-75 ">
@@ -112,6 +112,7 @@ const about = () => {
           </div>
           <Skills />
           <Experience />
+          <Education />
         </Layout>
       </main>
     </>
