@@ -43,7 +43,10 @@ const NavBar = () => {
         <CustomLink href="/projects" title="Projects" className="mx-4" />
         <CustomLink href="/articles" title="Articles" className="ml-4" />
       </nav>
-      <div className="absolute top-3 mx-auto inset-x-0">
+      <div
+        className="absolute top-3 left-1/2"
+        style={{ transform: 'translate(-50%,0)' }}
+      >
         <Logo />
       </div>
       <nav className="flex item-center justify-center flex-wrap ">

@@ -55,12 +55,13 @@ const about = () => {
                 passionate about crafting digital experiences that are both
                 aesthetically pleasing and user-friendly. I have been working in
                 this industry for four years and always strive to find novel and
-                innovative approaches to make my clients' ideas come to life.
+                innovative approaches to make my clients&apos; ideas come to
+                life.
               </p>
               <p className="font-medium mt-3">
                 To me, design is not solely about creating visually appealing
-                objects. Rather, it's about addressing problems and delivering
-                simple, pleasant experiences for users.
+                objects. Rather, it&apos;s about addressing problems and
+                delivering simple, pleasant experiences for users.
               </p>
               <p className="font-medium mt-3">
                 Be it a website, mobile app, or any other digital product, I
