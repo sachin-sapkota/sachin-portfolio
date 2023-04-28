@@ -26,7 +26,7 @@ const Details = ({
     >
       <LiIcon reference={ref} />
       <motion.div
-        initial={{ y: 50 }}
+        initial={{ y: 40 }}
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, type: 'spring' }}
       >

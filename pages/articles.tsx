@@ -13,9 +13,11 @@ const FramerImage = motion(Image);
 const MovingImg = ({ title, img, link }: any) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const imgRef = useRef(null);
+  const imgRef = useRef<HTMLImageElement>(null);
   function handleMouse({ event }: any) {
-    imgRef.current.style.display = 'inline-block';
+    if (imgRef.current) {
+      imgRef.current.style.display = 'inline-block';
+    }
     x.set(event.pageX);
   }
   function handleMouseLeave({ event }: any) {
