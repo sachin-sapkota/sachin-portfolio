@@ -14,7 +14,10 @@ import {
   GithubIcon,
   LinkedInIcon,
   PinterestIcon,
+  SunIcon,
+  MoonIcon,
 } from './icons';
+import useThemeSwitcher from './hooks/useThemeSwitcher';
 
 const CustomLink = ({ href, title, className = ' ' }: CustomLinkProps) => {
   const router = useRouter();
@@ -25,7 +28,7 @@ const CustomLink = ({ href, title, className = ' ' }: CustomLinkProps) => {
       <span
         className={`${
           router.asPath === href ? 'w-full' : 'w-0'
-        }      rounded-full bg-light absolute left-0  -bottom-0.5 group-hover:w-full ease-linear duration-300`}
+        }      rounded-full bg-light absolute left-0  -bottom-0.5 group-hover:w-full ease-linear duration-300 dark:bg-light`}
         style={{ height: '1.5px' }}
       >
         &nbsp;
@@ -35,8 +38,10 @@ const CustomLink = ({ href, title, className = ' ' }: CustomLinkProps) => {
 };
 
 const NavBar = () => {
+  const [mode, setMode] = useThemeSwitcher();
+
   return (
-    <header className=" w-full px-32 py-8 font-medium flex justify-between  ">
+    <header className="dark:text-light w-full px-32 py-8 font-medium flex justify-between  ">
       <nav>
         <CustomLink href="/" title="Home" className="mr-4" />
         <CustomLink href="/about" title="About" className="mx-4" />
@@ -49,7 +54,7 @@ const NavBar = () => {
       >
         <Logo />
       </div>
-      <nav className="flex item-center justify-center flex-wrap ">
+      <nav className="flex items-center justify-center flex-wrap ">
         <motion.a
           href="/"
           target={'_blank'}
@@ -95,6 +100,15 @@ const NavBar = () => {
         >
           <PinterestIcon />
         </motion.a>
+        <button
+          title="Theme Changer"
+          className={`${
+            mode === 'dark' ? 'bg-light' : 'bg-black'
+          } border-2 border-solid ml-4  flex items-center justify-center rounded-full p-1 select-none `}
+          onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
+        >
+          {mode === 'dark' ? <SunIcon /> : <MoonIcon />}
+        </button>
       </nav>
     </header>
   );

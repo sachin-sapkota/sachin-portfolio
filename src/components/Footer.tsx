@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { BuyMeCoffee, TwitterIcon } from './icons';
 const Footer = () => {
   return (
-    <footer className="w-full font-medium text-lg mt-10 px-32">
-      <Layout className="py-8 flex items-center justify-around border-t-2 border-solid border-dark  ">
+    <footer className="w-full font-medium text-lg mt-10 px-32 dark:text-light">
+      <Layout className="py-8 flex items-center justify-around border-t-2 border-solid border-dark dark:border-light dark:border-opacity-60 ">
         <span>{new Date().getFullYear()} &copy; All Rights Reserved</span>
         <Link href="/" target="_blank">
           Sachin Sapkota
@@ -16,9 +16,9 @@ const Footer = () => {
           className="flex gap-2 "
         >
           <div className="w-6 h-6 ">
-            <BuyMeCoffee />
+            <BuyMeCoffee className="text-white" />
           </div>
-          <span className=" ">Buy me a Coffee!</span>
+          <span className="">Buy me a Coffee!</span>
         </Link>
       </Layout>
     </footer>

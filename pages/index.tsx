@@ -16,7 +16,7 @@ export default function Home() {
           content="I can stunning portfolio with Next.js , tailwind css and framer-motion"
         />
       </Head>
-      <main className="flex items-start text-dark w-full min-h-screen">
+      <main className="flex items-start text-dark w-full min-h-screen dark:text-light">
         <Layout>
           <div className="flex items-start justify-between w-full">
             <div className="w-1/2">
@@ -36,7 +36,7 @@ export default function Home() {
               </p>
               <div className="flex items-center justify-start mt-2 ">
                 <Link
-                  className="flex items-center bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border border-solid border-transparent hover:border-dark"
+                  className="flex items-center bg-dark dark:bg-light dark:text-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light  hover:text-dark dark:hover:text-light dark:hover:border-light border border-solid border-transparent hover:border-dark dark:hover:bg-dark "
                   href="/resume.pdf"
                   target="_blank"
                   download={true}
@@ -45,7 +45,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="mailto:sachinsapkota773@gmail.com"
-                  className="ml-4 text-lg font-medium capitalize text-dark underline  "
+                  className="ml-4 text-lg font-medium capitalize dark:text-light text-dark underline  "
                 >
                   Contact me
                 </Link>

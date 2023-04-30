@@ -40,7 +40,7 @@ const about = () => {
         <meta name="description" content="about me"></meta>
       </Head>
 
-      <main className="flex w-full flex-col items-center justify-center">
+      <main className="dark:text-light flex w-full flex-col items-center justify-center">
         <Layout className="pt-16">
           <AnimatedText
             text="Passion Fuels Purpose!"
@@ -48,7 +48,7 @@ const about = () => {
           />
           <div className="grid w-full grid-cols-8 gap-16 place-content-center place-items-center">
             <div className="col-span-3 flex flex-col items-start justify-start">
-              <h2 className="mb-4 text-lg font-bold uppercase text-dark opacity-75">
+              <h2 className="mb-4 text-lg font-bold uppercase text-dark opacity-75  dark:text-light dark:opacity-75">
                 Biography
               </h2>
               <p className="font-medium mt-2  ">
@@ -71,9 +71,9 @@ const about = () => {
                 apply my skills and enthusiasm to your next project.
               </p>
             </div>
-            <div className="col-span-3 mx-3 relative h-5/6 rounded-2xl border-2 border-solid border-dark  ">
-              <div className="absolute inset-0 left-4 -z-10  w-full top-3 -bottom-4 rounded-t-3xl rounded-b-2xl bg-dark " />
-              <div className="bg-light p-8 rounded-2xl h-full relative">
+            <div className="col-span-3 mx-3 relative h-5/6 rounded-2xl border-2 border-solid border-dark dark:border-light  ">
+              <div className="absolute inset-0 left-3 -z-10  w-full top-3 -bottom-3 rounded-t-3xl rounded-b-2xl bg-dark dark:bg-light " />
+              <div className="bg-light p-8 rounded-2xl h-full relative dark:bg-dark">
                 <Image
                   src={ProfilePic}
                   alt="sachin"
@@ -87,16 +87,15 @@ const about = () => {
                 <span className="inline-block text-7xl font-bold">
                   <AnimateNumbers value={30} />+
                 </span>
-                <h2 className="text-xl font-semibold capitalize text-dark opacity-75 ">
+                <h2 className="text-xl font-semibold capitalize text-dark opacity-75  dark:text-light dark:opacity-75">
                   Satisfied Clients
                 </h2>
               </div>
               <div className="flex flex-col items-end justify-center">
                 <span className="inline-block text-7xl font-bold">
-                  {' '}
                   <AnimateNumbers value={40} />+
                 </span>
-                <h2 className="text-xl font-semibold capitalize text-dark opacity-75 ">
+                <h2 className="text-xl font-semibold capitalize text-dark opacity-75  dark:text-light dark:opacity-75 ">
                   Project Completed
                 </h2>
               </div>
@@ -104,7 +103,7 @@ const about = () => {
                 <span className="inline-block text-7xl font-bold">
                   <AnimateNumbers value={4} />+
                 </span>
-                <h2 className="text-xl font-semibold capitalize text-dark opacity-75 ">
+                <h2 className="text-xl font-semibold capitalize text-dark opacity-75  dark:text-light dark:opacity-75 ">
                   Years of Experience
                 </h2>
               </div>
