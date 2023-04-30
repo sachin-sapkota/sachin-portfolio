@@ -1,6 +1,7 @@
-import { useRef, useEffect, useState, useCallback } from 'react';
+import { useRef, useEffect, useState, useContext } from 'react';
 import { motion } from 'framer-motion';
-import useThemeSwitcher from './hooks/useThemeSwitcher';
+// import useThemeSwitcher from './hooks/useThemeSwitcher';
+import { themeContext } from '../context/themeContext';
 interface skillType {
   name: string;
   x: string;
@@ -21,40 +22,17 @@ const Skill = ({ name, x, y }: skillType) => {
   );
 };
 const Skills = () => {
+  const { mode } = useContext(themeContext);
   const ref = useRef<HTMLDivElement>(null);
-
-  const { mode, toggleMode } = useThemeSwitcher();
-  // console.log(window.localStorage.getItem('theme'));
-  // // if (mode === 'dark') {
-  // //   ref.current?.classList.add('bg-circularDark');
-  // // } else {
-  // //   ref.current?.classList.remove('bg-circularDark');
-  // //   ref.current?.classList.add('bg-circularLight');
-  // // }
-  // const [theme, setTheme] = useState<string | null>('');
-  // const themes = window.localStorage.getItem('theme');
-  // const getTheme = useCallback(() => {
-  //   setTheme(themes);
-  // }, [themes]);
-  // useEffect(() => {
-  //   const userPref = window.localStorage.getItem('theme');
-  //   console.log(userPref);
-  //   setTheme(userPref);
-  // }, [getTheme]);
-
-  // console.log(themes);
-  console.log(mode);
 
   return (
     <>
       <h2 className="font-bold text-8xl mt-56 w-full text-center ">Skills</h2>
       <div
         ref={ref}
-        className={`w-full h-screen relative flex items-center justify-center rounded-full  `}
-        style={{
-          backgroundImage:
-            'repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#f5f5f5 5px,#f5f5f5 100px)',
-        }}
+        className={`${
+          mode === 'dark' ? ' bg-circularDark ' : 'bg-circularLight'
+        } w-full h-screen relative flex items-center justify-center rounded-full  `}
       >
         <motion.div
           className="flex items-center justify-center rounded-full font-semibold p-8 shadow-sm   text-light cursor-pointer dark:text-dark "

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useContext } from 'react';
 import Link from 'next/link';
 import Logo from './Logo';
 import { useRouter } from 'next/router';
@@ -17,7 +17,8 @@ import {
   SunIcon,
   MoonIcon,
 } from './icons';
-import useThemeSwitcher from './hooks/useThemeSwitcher';
+import { themeContext } from '../context/themeContext';
+// import { useThemeSwitcher } from './hooks/useThemeSwitcher';
 
 const CustomLink = ({ href, title, className = ' ' }: CustomLinkProps) => {
   const router = useRouter();
@@ -38,7 +39,8 @@ const CustomLink = ({ href, title, className = ' ' }: CustomLinkProps) => {
 };
 
 const NavBar = () => {
-  const [mode, setMode] = useThemeSwitcher();
+  // const { mode, toggleMode } = useThemeSwitcher();
+  const { mode, toggleMode } = useContext(themeContext);
 
   return (
     <header className="dark:text-light w-full px-32 py-8 font-medium flex justify-between  ">
@@ -105,7 +107,7 @@ const NavBar = () => {
           className={`${
             mode === 'dark' ? 'bg-light' : 'bg-black'
           } border-2 border-solid ml-4  flex items-center justify-center rounded-full p-1 select-none `}
-          onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
+          onClick={() => toggleMode()}
         >
           {mode === 'dark' ? <SunIcon /> : <MoonIcon />}
         </button>
