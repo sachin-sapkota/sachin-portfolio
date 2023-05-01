@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import Link from 'next/link';
 import Logo from './Logo';
 import { useRouter } from 'next/router';
@@ -41,9 +41,34 @@ const CustomLink = ({ href, title, className = ' ' }: CustomLinkProps) => {
 const NavBar = () => {
   // const { mode, toggleMode } = useThemeSwitcher();
   const { mode, toggleMode } = useContext(themeContext);
+  const [isOpen, setIsOpen] = useState<Boolean>(false);
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
+  console.log(isOpen);
 
   return (
     <header className="dark:text-light w-full px-32 py-8 font-medium flex justify-between  ">
+      <button
+        className="flex flex-col justify-center items-center"
+        onClick={handleClick}
+      >
+        <span
+          className={`bg-dark rotate-45 dark:bg-light block h-0.5 w-9 rounded-sm  ${
+            isOpen ? ' translate-y-1' : '-translate-y-0.5'
+          }`}
+        ></span>
+        <span
+          className={`bg-dark dark:bg-light block h-0.5 w-9 rounded-sm my-1 ${
+            isOpen ? 'opacity-0' : 'opacity-100'
+          }`}
+        ></span>
+        <span
+          className={`bg-dark dark:bg-light block h-0.5 w-9 rounded-sm  ${
+            isOpen ? ' -translate-y-1' : 'translate-y-0.5'
+          }`}
+        ></span>
+      </button>
       <nav>
         <CustomLink href="/" title="Home" className="mr-4" />
         <CustomLink href="/about" title="About" className="mx-4" />

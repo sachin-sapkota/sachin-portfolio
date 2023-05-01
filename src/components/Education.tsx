@@ -1,6 +1,5 @@
 import { useRef } from 'react';
 import { useScroll, motion } from 'framer-motion';
-import LiIcon from './LiIcon';
 
 interface detailType {
   type: string;
@@ -10,19 +9,56 @@ interface detailType {
 }
 const Details = ({ type, time, place, info }: detailType) => {
   const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['center end', 'center center'],
+  });
   return (
     <li
       ref={ref}
       className="my-8 first:mt-0 last:mb-0 w-3/5 mx-auto  flex flex-col items-center justify-between"
     >
-      <LiIcon reference={ref} />
+      <figure className="absolute -left-4 ">
+        <svg width="80" height="80" viewBox="0 0 100 140">
+          <motion.circle
+            cx="75"
+            cy="50"
+            r="28"
+            className="stroke-1 stroke-light"
+            style={{
+              stroke: '#777777',
+              strokeWidth: '12px',
+              fill: 'none',
+              pathLength: scrollYProgress,
+            }}
+          />
+          <motion.circle
+            cx="75"
+            cy="50"
+            r="28"
+            style={{
+              fill: '#f5f5f5',
+              strokeWidth: '5px',
+              pathLength: scrollYProgress,
+            }}
+          />
+          <circle
+            cx="75"
+            cy="50"
+            r="13"
+            className="animate-pulse"
+            style={{ fill: '#563E96', strokeWidth: '5px' }}
+          />
+        </svg>
+      </figure>
+
       <motion.div
         initial={{ y: 50 }}
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, type: 'spring' }}
       >
         <h3 className="capitalize font-bold text-2xl">{type}</h3>
-        <span className="capitalize font-medium text-dark opacity-75">
+        <span className="capitalize font-medium text-dark opacity-75 dark:text-light ">
           {time} | {place}
         </span>
         <p className="font-medium w-full">{info}</p>
@@ -43,7 +79,7 @@ const Education = () => {
         <motion.div
           style={{ scaleY: scrollYProgress }}
           ref={ref}
-          className="absolute left-9 top-12  w-1 origin-top bg-dark h-full"
+          className="bg-bothColor absolute left-9 top-12  w-1 origin-top  h-full  "
         />
         <ul className="w-full flex flex-col items-start justify-between ">
           <Details

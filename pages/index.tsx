@@ -20,7 +20,13 @@ export default function Home() {
         <Layout>
           <div className="flex items-start justify-between w-full">
             <div className="w-1/2">
-              <Image src={sachinPic} alt="" className="w-full h-auto" />
+              <Image
+                src={sachinPic}
+                alt=""
+                className="w-full h-auto"
+                priority
+                sizes=" (max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+              />
             </div>
             <div className="w-1/2 flex flex-col items-start  justify-start self-center ">
               <h1></h1>

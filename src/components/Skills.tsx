@@ -10,11 +10,10 @@ interface skillType {
 const Skill = ({ name, x, y }: skillType) => {
   return (
     <motion.div
-      className="flex items-center justify-center rounded-full font-semibold py-3 px-6  shadow-sm  bg-dark text-light cursor-pointer absolute "
+      className="flex items-center justify-center rounded-full font-semibold py-3 px-6  shadow-sm  bg-dark text-light cursor-pointer absolute dark:bg-white dark:text-dark "
       whileHover={{ scale: 1.05 }}
       initial={{ x: 0, y: 0 }}
-      whileInView={{ x: x, y: y }}
-      transition={{ duration: 1.5 }}
+      whileInView={{ x: x, y: y, transition: { duration: 1.5 } }}
       viewport={{ once: true }}
     >
       {name}
@@ -35,7 +34,7 @@ const Skills = () => {
         } w-full h-screen relative flex items-center justify-center rounded-full  `}
       >
         <motion.div
-          className="flex items-center justify-center rounded-full font-semibold p-8 shadow-sm   text-light cursor-pointer dark:text-dark "
+          className="flex items-center justify-center rounded-full font-semibold p-8 shadow-sm   text-light cursor-pointer dark:text-dark dark:bg-light bg-dark"
           whileHover={{ scale: 1.05 }}
         >
           Web

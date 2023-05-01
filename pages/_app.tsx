@@ -7,12 +7,7 @@ import 'typeface-montserrat';
 import Footer from '@/src/components/Footer';
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-mont' });
 import { ThemeProvider } from '@/src/context/themeContext';
-import { useEffect } from 'react';
 export default function App({ Component, pageProps }: AppProps) {
-  useEffect(() => {
-    const d = window.localStorage.getItem('theme');
-    console.log(d, 'hello');
-  }, []);
   return (
     <>
       <Head>

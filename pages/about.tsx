@@ -72,13 +72,15 @@ const about = () => {
               </p>
             </div>
             <div className="col-span-3 mx-3 relative h-5/6 rounded-2xl border-2 border-solid border-dark dark:border-light  ">
-              <div className="absolute inset-0 left-3 -z-10  w-full top-3 -bottom-3 rounded-t-3xl rounded-b-2xl bg-dark dark:bg-light " />
+              <div className="absolute inset-0 left-3 -z-10  w-full top-2 -bottom-3 rounded-t-3xl rounded-b-2xl bg-dark dark:bg-light " />
               <div className="bg-light p-8 rounded-2xl h-full relative dark:bg-dark">
                 <Image
                   src={ProfilePic}
                   alt="sachin"
                   className="w-full h-full rounded-2xl object-cover"
                   draggable={false}
+                  priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
             </div>

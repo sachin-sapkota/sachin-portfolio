@@ -66,25 +66,27 @@ const Article = ({ img, title, date, link }: articleType) => {
       initial={{ y: 200 }}
       whileInView={{ y: 0, transition: { duration: 0.5, ease: 'easeInOut' } }}
       viewport={{ once: true }}
-      className="relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between text-dark bg-light border border-solid border-dark border-r-4 border-b-4"
+      className="relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between text-dark dark:text-light bg-light dark:bg-dark border border-solid border-dark dark:border-light border-r-4 border-b-4"
     >
       <MovingImg title={title} img={img} link={link} />
 
-      <span className="text-primary font-semibold pl-4 ">{date}</span>
+      <span className="text-dark dark:text-light opacity-75  font-semibold pl-4 ">
+        {date}
+      </span>
     </motion.li>
   );
 };
 
 const FeatureArticle = ({ img, title, time, summary, link }: articleType) => {
   return (
-    <div className=" col-span-1 w-full p-4 bg-light border border-solid border-dark rounded-2xl relative">
+    <div className=" col-span-1 w-full p-4 bg-light dark:bg-dark dark:border-light border border-solid border-dark rounded-2xl relative">
       <Link
         href={link}
         target="_blank"
         className="w-full cursor-pointer overflow-hidden rounded-lg inline-block "
       >
         <div
-          className="absolute inset-0 left-3 -z-10  w-full top-2 -bottom-3 rounded-t-3xl rounded-bl-3xl rounded-b-2xl bg-dark  "
+          className="absolute inset-0 left-3 -z-10  w-full top-2 -bottom-3 rounded-t-3xl rounded-bl-3xl rounded-b-2xl bg-dark dark:bg-light "
           style={{ zIndex: -10 }}
         />
         <FramerImage
@@ -93,6 +95,8 @@ const FeatureArticle = ({ img, title, time, summary, link }: articleType) => {
           src={img}
           alt={title}
           className="w-full h-auto "
+          priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
         />
       </Link>
       <Link href={link} target="_blank">
@@ -101,7 +105,9 @@ const FeatureArticle = ({ img, title, time, summary, link }: articleType) => {
         </h2>
       </Link>
       <p className="text-sm mb-2 font-medium">{summary}</p>
-      <span className="text-primary font-semibold">{time}</span>
+      <span className="text-dark dark:text-light opacity-75 font-semibold">
+        {time}
+      </span>
     </div>
   );
 };
@@ -113,7 +119,7 @@ const articles = () => {
         <meta name="description" content="articles" />
       </Head>
 
-      <main className="flex w-full flex-col items-center justify-center overflow-hidden pb-32 ">
+      <main className="flex w-full flex-col items-center justify-center overflow-hidden pb-32 dark:text-light ">
         <Layout className="pt-16">
           <AnimatedText
             text="Words can change the world!"
