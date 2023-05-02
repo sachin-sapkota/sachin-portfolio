@@ -5,7 +5,7 @@ import { themeContext } from '../context/themeContext';
 const Hireme = () => {
   const { mode } = useContext(themeContext);
   return (
-    <div className="fixed lg:left-4 lg:bottom-4 lg:right-auto lg:top-auto right-2 sm:right-4 md:right-5 top-0 flex items-center justify-center overflow-hidden z-30    ">
+    <div className="fixed lg:left-4 lg:bottom-4 lg:right-auto lg:top-auto right-2 sm:right-4 md:right-5 top-0 flex items-center justify-center overflow-hidden z-20    ">
       <div className="lg:w-44 md:w-28 w-24 h-auto flex items-center justify-center relative">
         <svg
           xmlns="http://www.w3.org/2000/svg"
