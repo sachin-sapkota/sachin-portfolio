@@ -8,6 +8,7 @@ import article2 from '../public/images/article2.png';
 import article3 from '../public/images/article3.png';
 import { motion, useMotionValue } from 'framer-motion';
 import { useRef } from 'react';
+import TransitionEffect from '@/src/components/TransitionEffect';
 // import React from 'react'
 
 const FramerImage = motion(Image);
@@ -118,7 +119,7 @@ const articles = () => {
         <title>SS | Articles</title>
         <meta name="description" content="articles" />
       </Head>
-
+      <TransitionEffect />
       <main className="flex w-full flex-col items-center justify-center overflow-hidden pb-32 dark:text-light ">
         <Layout className="pt-12 px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32">
           <AnimatedText

@@ -6,6 +6,7 @@ import AnimatedText from '../src/components/AnimatedText';
 import Link from 'next/link';
 import { LinkArrow } from '@/src/components/icons';
 import Hireme from '@/src/components/Hireme';
+import TransitionEffect from '@/src/components/TransitionEffect';
 export default function Home() {
   return (
     <>
@@ -16,6 +17,7 @@ export default function Home() {
           content="Stunning portfolio with Next.js , tailwind css and framer-motion"
         />
       </Head>
+      <TransitionEffect />
       <main className="flex items-start text-dark w-full min-h-screen dark:text-light">
         <Layout className="h-full sm:px-8 px-4 md:px-12  lg:px-16 xl:px-20   ">
           <div className="flex items-start justify-between w-full flex-col lg:flex-row lg:justify-start   lg:items-start lg:pt-10  ">

@@ -12,6 +12,7 @@ import detour_proj from '../public/images/detour_proj.png';
 import clinic_expert_proj from '../public/images/clinic_expert.png';
 import x8c_proj from '../public/images/x8c_proj.png';
 import aakhyaan_proj from '../public/images/aakhyan_proj.png';
+import TransitionEffect from '@/src/components/TransitionEffect';
 
 const FramerImage = motion(Image);
 interface fptype {
@@ -137,7 +138,7 @@ const projects = () => {
         <title>SS | My Projects</title>
         <meta name="description" content="My projects"></meta>
       </Head>
-
+      <TransitionEffect />
       <main className="flex w-full flex-col items-center justify-center dark:text-light">
         <Layout className="pt-16 px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32">
           <AnimatedText

@@ -7,7 +7,10 @@ import 'typeface-montserrat';
 import Footer from '@/src/components/Footer';
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-mont' });
 import { ThemeProvider } from '@/src/context/themeContext';
+import { AnimatePresence } from 'framer-motion';
+import { useRouter } from 'next/router';
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -19,7 +22,9 @@ export default function App({ Component, pageProps }: AppProps) {
       >
         <ThemeProvider>
           <NavBar />
-          <Component {...pageProps} />
+          <AnimatePresence mode="wait">
+            <Component key={router.asPath} {...pageProps} />
+          </AnimatePresence>
           <Footer />
         </ThemeProvider>
       </main>
