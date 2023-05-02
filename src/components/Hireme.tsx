@@ -3,11 +3,10 @@ import { CircularText } from './icons';
 import Link from 'next/link';
 import { themeContext } from '../context/themeContext';
 const Hireme = () => {
-  const { mode, toggleMode } = useContext(themeContext);
-  // console.log(mode);
+  const { mode } = useContext(themeContext);
   return (
-    <div className="fixed left-4 bottom-4 flex items-center justify-center overflow-hidden ">
-      <div className="w-44 h-auto flex items-center justify-center relative">
+    <div className="fixed lg:left-4 lg:bottom-4 lg:right-auto lg:top-auto right-2 sm:right-4 md:right-5 top-0 flex items-center justify-center overflow-hidden z-30    ">
+      <div className="lg:w-44 md:w-28 w-24 h-auto flex items-center justify-center relative">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="496"
@@ -23,7 +22,7 @@ const Hireme = () => {
         </svg>
         <Link
           href="mailto:sachinsapkota773@gmail.com"
-          className="flex items-center justify-center absolute inset-0 m-auto bg-dark rounded-full text-light text-center text-base font-medium w-1/2 h-1/2 shadow-md dark:bg-light dark:text-dark  "
+          className="flex items-center justify-center absolute inset-0 m-auto bg-dark rounded-full text-light text-center lg:text-base font-semibold  text-xs w-1/2 h-1/2 shadow-md dark:bg-light dark:text-dark  "
         >
           Hire Me
         </Link>

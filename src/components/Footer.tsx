@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from './Layout';
 import Link from 'next/link';
-import { BuyMeCoffee, TwitterIcon } from './icons';
+import { BuyMeCoffee } from './icons';
 const Footer = () => {
   return (
     <footer className="w-full font-medium text-lg mt-10 px-32 dark:text-light">

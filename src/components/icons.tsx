@@ -106,59 +106,11 @@ export const DribbleIcon = ({ className, ...rest }: classnameType) => (
     />
   </svg>
 );
-
-export const SunIcon = ({ className, ...rest }: classnameType) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-  >
-    <g
-      fill="none"
-      stroke="black"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-    >
-      <circle cx="12" cy="12" r="5" fill="black" opacity="1">
-        <animate
-          attributeName="opacity"
-          begin="0.5s"
-          to="1"
-          dur="0.5s"
-        ></animate>
-        <animate attributeName="opacity" begin="1s" to="0" dur="0.5s"></animate>
-      </circle>
-      <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M19.78 19.78l-1.42-1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M19.78 4.22l-1.42 1.42">
-        <animate
-          attributeName="strokeDasharray"
-          dur="1.5s"
-          values="0 24;24 0"
-          repeatCount="indefinite"
-        ></animate>
-      </path>
-      <circle
-        cx="12"
-        cy="12"
-        r="1"
-        stroke="white"
-        strokeDasharray="4 2"
-        strokeWidth="2"
-      >
-        <animateTransform
-          attributeName="transform"
-          attributeType="XML"
-          type="rotate"
-          dur="2s"
-          from="0 12 12"
-          to="360 12 12"
-          repeatCount="indefinite"
-        />
-      </circle>
-    </g>
-  </svg>
-);
+declare namespace JSX {
+  interface IntrinsicElements {
+    svg: React.SVGProps<SVGSVGElement> & { set?: string };
+  }
+}
 
 export const MoonIcon = ({ className, ...rest }: classnameType) => (
   <svg

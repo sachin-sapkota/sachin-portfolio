@@ -120,7 +120,7 @@ const articles = () => {
       </Head>
 
       <main className="flex w-full flex-col items-center justify-center overflow-hidden pb-32 dark:text-light ">
-        <Layout className="pt-16">
+        <Layout className="pt-16 px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32">
           <AnimatedText
             text="Words can change the world!"
             classname={'text-8xl mb-16'}

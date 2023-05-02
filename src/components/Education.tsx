@@ -16,7 +16,7 @@ const Details = ({ type, time, place, info }: detailType) => {
   return (
     <li
       ref={ref}
-      className="my-8 first:mt-0 last:mb-0 w-3/5 mx-auto  flex flex-col items-center justify-between"
+      className=" first:mt-0 last:mb-0 w-3/5 mx-auto  flex flex-col items-center justify-between"
     >
       <figure className="absolute -left-4 ">
         <svg width="80" height="80" viewBox="0 0 100 140">
@@ -74,14 +74,16 @@ const Education = () => {
   });
   return (
     <div className="my-64">
-      <h2 className="font-bold text-8xl mb-32 w-full text-center">Education</h2>
+      <h2 className="font-bold lg:text-8xl md:text-7xl text-5xl lg:mt-56 md:mt-32 mt-24 w-full text-center ">
+        Education
+      </h2>
       <div className="w-4/5 mx-auto relative">
         <motion.div
           style={{ scaleY: scrollYProgress }}
           ref={ref}
-          className="bg-bothColor absolute left-9 top-12  w-1 origin-top  h-full  "
+          className="bg-bothColor absolute left-9 top-12  w-1 origin-top  bottom-0  "
         />
-        <ul className="w-full flex flex-col items-start justify-between ">
+        <ul className="gap-8 w-full flex flex-col items-start justify-between ">
           <Details
             type="Bachelor of Science in Electronics, Communication and Information Technology"
             time="2019-2025"
