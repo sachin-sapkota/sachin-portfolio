@@ -1,6 +1,6 @@
 import AnimatedText from '@/src/components/AnimatedText';
 import Layout from '@/src/components/Layout';
-import { GithubIcon } from '@/src/components/icons';
+import { GithubIcon, LinkArrow } from '@/src/components/icons';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -31,15 +31,15 @@ const FeaturedProject = ({
   github,
 }: fptype) => {
   return (
-    <article className="w-full flex items-center justify-between rounded-3xl border border-solid border-dark bg-light dark:bg-dark dark:border-light shadow-2xl p-12 relative ">
+    <article className="w-full flex items-center justify-between rounded-3xl border border-solid border-dark bg-light dark:bg-dark dark:border-light shadow-2xl lg:p-12 relative flex-col lg:flex-row md:p-8 p-4  ">
       <div
-        className="absolute inset-0 left-3 -z-10  w-full top-2 -bottom-3 rounded-t-3xl rounded-bl-3xl rounded-br-3xl bg-dark dark:bg-light  "
+        className="absolute inset-0 lg:left-3 left-2   w-full top-1.5 lg:-bottom-3 -bottom-2  rounded-t-3xl rounded-bl-3xl rounded-br-3xl bg-dark dark:bg-light  "
         style={{ zIndex: -10 }}
       />
       <Link
         href={link}
         target="_blank"
-        className="w-1/2 cursor-pointer  overflow-hidden rounded-lg"
+        className="lg:w-1/2 w-full cursor-pointer  overflow-hidden rounded-lg"
       >
         <FramerImage
           whileHover={{ scale: 1.05 }}
@@ -49,26 +49,32 @@ const FeaturedProject = ({
           className="w-full object-cover border-2 border-solid rounded-xl border-dark border-opacity-50 h-auto "
         />
       </Link>
-      <div className="w-1/2 flex flex-col items-start jusitfy-between pl-6">
-        <span className="text-dark font-semibold text-xl dark:text-light opacity-75">
+      <div className="lg:w-1/2 w-full flex flex-col items-start jusitfy-between lg:pl-6 ">
+        <span className="text-dark font-semibold md:text-xl sm:text-lg text-base  dark:text-light opacity-75">
           {type}
         </span>
         <Link className="hover:underline " href={link} target="_blank">
-          <h2 className="my-3 w-full text-left text-4xl font-bold hover:underline   ">
+          <h2 className=" w-full text-left lg:text-4xl md:text-3xl sm:text-2xl text-xl font-bold hover:underline   ">
             {title}
           </h2>
         </Link>
-        <p className="my-2 font-medium  ">{summary}</p>
-        <div className="mt-2 flex items-center">
+        <p className="my-2 font-medium md:text-base text-sm    ">{summary}</p>
+        <div className="mt-2 flex items-center justify-between w-full">
           <Link href={github} target="_blank" className="w-10">
             <GithubIcon />
           </Link>
           <Link
             href={link}
             target="_blank"
-            className="ml-4 rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold"
+            className="ml-4 rounded-lg bg-dark text-light p-2 px-6 text-base md:text-lg font-semibold"
           >
-            Visit Project
+            <motion.div
+              whileHover={{ y: -3 }}
+              className="w-auto h-9 flex items-center px-2 border-dark dark:border-light border-2 border-solid rounded-md hover:border-transparent sm:text-base  text-sm"
+            >
+              Visit Project
+              <LinkArrow className="sm:w-6 w-4 ml-2 inline-block" />
+            </motion.div>
           </Link>
         </div>
       </div>
@@ -78,14 +84,14 @@ const FeaturedProject = ({
 
 const Project = ({ type, title, image, link, github }: fptype) => {
   return (
-    <article className="w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative dark:bg-dark dark:border-light">
+    <article className="w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-4 sm:p-6 relative dark:bg-dark dark:border-light ">
       <Link
         href={link}
         target="_blank"
         className="w-full cursor-point overflow-hidden rounded-lg"
       >
         <div
-          className="absolute inset-0 left-3 -z-10  w-full top-2 -bottom-3 rounded-t-3xl rounded-bl-3xl rounded-b-2xl bg-dark dark:bg-light  "
+          className="absolute inset-0 lg:left-3 left-2 -z-10  w-full top-2 lg:-bottom-3 -bottom-2 rounded-t-3xl rounded-bl-3xl rounded-b-2xl bg-dark dark:bg-light  "
           style={{ zIndex: -10 }}
         />
         <FramerImage
@@ -99,11 +105,11 @@ const Project = ({ type, title, image, link, github }: fptype) => {
         />
       </Link>
       <div className="w-full flex flex-col items-start jusitfy-between mt-4">
-        <span className="text-dark font-semibold text-xl dark:text-light opacity-75">
+        <span className="text-dark font-semibold lg:text-xl md:text-lg sm:text-base text-sm  dark:text-light opacity-75">
           {type}
         </span>
         <Link className="hover:underline" href={link} target="_blank">
-          <h2 className="my-3 w-full text-left text-3xl font-bold  ">
+          <h2 className=" w-full text-left lg:text-3xl md:text-2xl sm:text-xl text-lg font-bold hover:underline   ">
             {title}
           </h2>
         </Link>
@@ -136,9 +142,11 @@ const projects = () => {
         <Layout className="pt-16 px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32">
           <AnimatedText
             text="Imagination Trumps Knowledge!"
-            classname={'text-8xl mb-16'}
+            classname={
+              'text-5xl sm:text-6xl  md:text-7xl xl:text-8xl sm:mb-16 mb-8'
+            }
           />
-          <div className="grid grid-cols-12 gap-24  ">
+          <div className="grid grid-cols-12 xl:gap-24 xl:gap-x-16 lg:gap-x-16 md:gap-x-8 gap-y-24 gap-x-4  ">
             <div className="col-span-12">
               <FeaturedProject
                 title="Digitize Nepal"
@@ -149,7 +157,7 @@ const projects = () => {
                 github="private"
               />
             </div>
-            <div className="col-span-6">
+            <div className="col-span-12 sm:col-span-6">
               <Project
                 title="X8C"
                 image={x8c_proj}
@@ -158,7 +166,7 @@ const projects = () => {
                 github="https://github.com/sachin-sapkota/x8c"
               />
             </div>
-            <div className="col-span-6">
+            <div className="col-span-12 sm:col-span-6">
               <Project
                 title="Aakhyaan : An Online Education Platform"
                 image={aakhyaan_proj}
@@ -177,7 +185,7 @@ const projects = () => {
                 github="https://github.com/sachin-sapkota/online-job-portal"
               />
             </div>
-            <div className="col-span-6">
+            <div className="col-span-12 sm:col-span-6">
               <Project
                 title="Detour website "
                 image={detour_proj}
@@ -186,7 +194,7 @@ const projects = () => {
                 github="https://github.com/sachin-sapkota/detour-website"
               />
             </div>
-            <div className="col-span-6">
+            <div className="col-span-12 sm:col-span-6">
               <Project
                 title="Clinic Expert"
                 image={clinic_expert_proj}

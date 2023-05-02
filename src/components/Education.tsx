@@ -16,9 +16,9 @@ const Details = ({ type, time, place, info }: detailType) => {
   return (
     <li
       ref={ref}
-      className=" first:mt-0 last:mb-0 w-3/5 mx-auto  flex flex-col items-center justify-between"
+      className=" w-3/4 mx-auto  flex flex-col items-center justify-between"
     >
-      <figure className="absolute -left-4 ">
+      <figure className="absolute md:-left-4 sm:-left-8 -left-12  ">
         <svg width="80" height="80" viewBox="0 0 100 140">
           <motion.circle
             cx="75"
@@ -56,12 +56,17 @@ const Details = ({ type, time, place, info }: detailType) => {
         initial={{ y: 50 }}
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, type: 'spring' }}
+        viewport={{ once: true }}
       >
-        <h3 className="capitalize font-bold text-2xl">{type}</h3>
-        <span className="capitalize font-medium text-dark opacity-75 dark:text-light ">
+        <h3 className="capitalize font-bold text-base sm:text-xl lg:text-2xl">
+          {type}
+        </h3>
+        <span className="text-sm sm:text-base  capitalize font-medium text-dark dark:text-light opacity-75">
           {time} | {place}
         </span>
-        <p className="font-medium w-full">{info}</p>
+        <p className="font-medium w-full pt-1.5 text-xs sm:text-sm md:text-base">
+          {info}
+        </p>
       </motion.div>
     </li>
   );
@@ -73,15 +78,15 @@ const Education = () => {
     offset: ['start end', 'center start'],
   });
   return (
-    <div className="my-64">
-      <h2 className="font-bold lg:text-8xl md:text-7xl text-5xl lg:mt-56 md:mt-32 mt-24 w-full text-center ">
+    <div className="xl:my-64 lg:my-48 md:my-32  ">
+      <h2 className="font-bold lg:text-8xl md:text-7xl text-5xl lg:mt-56 md:mt-32 mt-0 w-full text-center ">
         Education
       </h2>
-      <div className="w-4/5 mx-auto relative">
+      <div className="w-full md:w-4/5 mx-auto relative mt-12">
         <motion.div
           style={{ scaleY: scrollYProgress }}
           ref={ref}
-          className="bg-bothColor absolute left-9 top-12  w-1 origin-top  bottom-0  "
+          className="absolute left-1 sm:left-5 md:left-9 top-12  w-1 origin-top bg-bothColor h-full "
         />
         <ul className="gap-8 w-full flex flex-col items-start justify-between ">
           <Details

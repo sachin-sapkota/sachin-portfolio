@@ -37,7 +37,7 @@ const Skills = () => {
           mode === 'dark'
             ? ' md:bg-circularDarkLg sm:bg-circularDarkMd bg-circularDarkSm   '
             : 'md:bg-circularLightLg sm:bg-circularLightMd bg-circularLightSm '
-        } w-full md:h-screen h-96  relative flex items-center justify-center rounded-full  `}
+        } w-full lg:h-screen h-96  relative flex items-center justify-center rounded-full  `}
       >
         <motion.div
           className="flex items-center justify-center rounded-full font-semibold lg:p-8 md:p-5 sm:p-4 p-2 shadow-sm   text-light cursor-pointer dark:text-dark dark:bg-light bg-dark"

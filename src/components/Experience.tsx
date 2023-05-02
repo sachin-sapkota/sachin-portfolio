@@ -96,11 +96,11 @@ const Experience = () => {
     offset: ['start end', 'center start'],
   });
   return (
-    <div className="xl:my-64 lg:my-48 md:my-32 my-20">
+    <div className="xl:my-64 lg:my-48 md:my-32  my-20">
       <h2 className="font-bold lg:text-8xl md:text-7xl text-5xl lg:mt-56 md:mt-32 mt-0 w-full text-center ">
         Experience
       </h2>
-      <div className="w-full md:w-4/5 mx-auto relative mt-16">
+      <div className="w-full md:w-4/5 mx-auto relative mt-12">
         <motion.div
           style={{ scaleY: scrollYProgress }}
           ref={ref}
