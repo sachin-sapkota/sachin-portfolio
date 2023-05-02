@@ -44,7 +44,7 @@ export default function Home() {
               <div className="flex items-center t mt-2 justify-center lg:justify-start w-full ">
                 <Link
                   className="flex items-center bg-dark dark:bg-light dark:text-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light  hover:text-dark dark:hover:text-light dark:hover:border-light border border-solid border-transparent hover:border-dark dark:hover:bg-dark "
-                  href="/resume.pdf"
+                  href="/pdf/resume.pdf"
                   target="_blank"
                   download={true}
                 >

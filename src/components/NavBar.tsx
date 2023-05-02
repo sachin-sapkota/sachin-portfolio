@@ -123,7 +123,7 @@ const NavBar = () => {
 
         <nav className="flex items-center justify-center flex-wrap ">
           <motion.a
-            href="/"
+            href="https://twitter.com"
             target={'_blank'}
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
@@ -132,7 +132,7 @@ const NavBar = () => {
             <TwitterIcon />
           </motion.a>
           <motion.a
-            href="/"
+            href="https://github.com/sachin-sapkota"
             target={'_blank'}
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
@@ -141,7 +141,7 @@ const NavBar = () => {
             <GithubIcon />
           </motion.a>
           <motion.a
-            href="/"
+            href="https://www.linkedin.com/in/sachin-sapkota-2223a8215/"
             target={'_blank'}
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
@@ -206,29 +206,29 @@ const NavBar = () => {
 
           <nav className="flex items-center justify-center flex-wrap ">
             <motion.a
-              href="/"
+              href="https://twitter.com"
               target={'_blank'}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
-              className="w-8 mx-3 sm:w-6 sm:mx-1"
+              className="w-6 mx-3"
             >
               <TwitterIcon />
             </motion.a>
             <motion.a
-              href="/"
+              href="https://github.com/sachin-sapkota"
               target={'_blank'}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
-              className="w-8 mx-3 sm:w-6 sm:mx-1"
+              className="w-6 mx-3"
             >
               <GithubIcon />
             </motion.a>
             <motion.a
-              href="/"
+              href="https://www.linkedin.com/in/sachin-sapkota-2223a8215/"
               target={'_blank'}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
-              className="w-8 mx-3 sm:w-6 sm:mx-1"
+              className="w-6 mx-3"
             >
               <LinkedInIcon />
             </motion.a>

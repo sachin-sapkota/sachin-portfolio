@@ -61,9 +61,13 @@ const FeaturedProject = ({
         </Link>
         <p className="my-2 font-medium md:text-base text-sm    ">{summary}</p>
         <div className="mt-2 flex items-center justify-between w-full">
-          <Link href={github} target="_blank" className="w-10">
-            <GithubIcon />
-          </Link>
+          {github === 'private' ? (
+            ''
+          ) : (
+            <Link href={github} target="_blank" className="w-10">
+              <GithubIcon />
+            </Link>
+          )}
           <Link
             href={link}
             target="_blank"
@@ -123,9 +127,13 @@ const Project = ({ type, title, image, link, github }: fptype) => {
           >
             Visit
           </Link>
-          <Link href={github} target="_blank" className="w-10">
-            <GithubIcon />
-          </Link>
+          {github === 'private' ? (
+            ''
+          ) : (
+            <Link href={github} target="_blank" className="w-10">
+              <GithubIcon />
+            </Link>
+          )}
         </div>
       </div>
     </article>
