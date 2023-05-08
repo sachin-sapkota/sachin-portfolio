@@ -207,7 +207,7 @@ const projects = () => {
               <Project
                 title="Clinic Expert"
                 image={clinic_expert_proj}
-                link="landing-page-kappa-lake.vercel.app"
+                link="https://landing-page-kappa-lake.vercel.app"
                 type="Website"
                 github="https://github.com/sachin-sapkota/landing-page-"
               />
