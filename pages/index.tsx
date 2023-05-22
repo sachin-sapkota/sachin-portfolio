@@ -18,9 +18,9 @@ export default function Home() {
         />
       </Head>
       <TransitionEffect />
-      <main className="flex items-start text-dark w-full min-h-screen dark:text-light">
+      <main className="flex items-center text-dark w-full min-h-screen dark:text-light ">
         <Layout className="h-full sm:px-8 px-4 md:px-12  lg:px-16 xl:px-20   ">
-          <div className="flex items-start justify-between w-full flex-col lg:flex-row lg:justify-start   lg:items-start lg:pt-10  ">
+          <div className="flex items-start justify-between w-full flex-col lg:flex-row lg:justify-start   lg:items-center  ">
             <div className=" w-full flex justify-center  ">
               <Image
                 src={sachinPic}
@@ -30,12 +30,12 @@ export default function Home() {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
               />
             </div>
-            <div className="w-full flex flex-col items-start  justify-start  text-center lg:text-left  h-full sm:pt-5 xl:pt-20 lg:pt-8  pt-3   ">
+            <div className="w-full flex flex-col items-start  justify-start  text-center lg:text-left  h-full sm:pt-5 pt-3   ">
               <AnimatedText
                 text="Turning Vision into reality with code and design."
-                classname=" text-3xl text-center  lg:text-left lg:text-6xl  sm:text-5xl pb-1"
+                classname=" text-3xl text-center 2xl:text-7xl  lg:text-left lg:text-6xl  sm:text-5xl pb-1"
               />
-              <p className="sm:my-4 my-2 text-sm md:text-base font-medium text-center lg:text-left  ">
+              <p className="sm:my-4 my-2 text-sm md:text-base xl:text-lg font-medium text-center lg:text-left  ">
                 Discover cutting-edge web applications crafted from your ideas
                 by a proficient full-stack developer.Check out my recent
                 projects and articles highlighting my mastery in Next.js and web

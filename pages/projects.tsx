@@ -179,7 +179,7 @@ const projects = () => {
               <Project
                 title="Aakhyaan : An Online Education Platform"
                 image={aakhyaan_proj}
-                link="https://digitizenepal.net"
+                link="https://aakhyaan.org/"
                 type="Organizational"
                 github="private"
               />
