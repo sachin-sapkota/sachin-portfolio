@@ -5,7 +5,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-
+import telecbt from '../public/images/telecbt.png';
 import digitizeNepal from '../public/images/digitizenepal_proj.png';
 import jobxa_proj from '../public/images/jobxa_proj.png';
 import detour_proj from '../public/images/detour_proj.png';
@@ -13,6 +13,7 @@ import clinic_expert_proj from '../public/images/clinic_expert.png';
 import x8c_proj from '../public/images/x8c_proj.png';
 import aakhyaan_proj from '../public/images/aakhyan_proj.png';
 import TransitionEffect from '@/src/components/TransitionEffect';
+import kairos from '../public/images/kairos.png';
 
 const FramerImage = motion(Image);
 interface fptype {
@@ -166,6 +167,26 @@ const projects = () => {
                 github="private"
               />
             </div>
+            <div className="col-span-12">
+              <FeaturedProject
+                title="Job Xa | An Online Job platform"
+                image={jobxa_proj}
+                summary="Job Xa is an online job platform that connects the client and worker together."
+                link="https://online-job-portal.vercel.app/"
+                type="Featured Project"
+                github="https://github.com/sachin-sapkota/online-job-portal"
+              />
+            </div>
+            <div className="col-span-12 ">
+              <FeaturedProject
+                title="Tele-CBT (Tele-therapy website)"
+                summary=" Teletherapy refers to mental health treatment delivered over the internet."
+                image={telecbt}
+                link="https://teletherapy.vercel.app/"
+                type="Medical website"
+                github="https://github.com/sachin-sapkota/teletherapy_frontend"
+              />
+            </div>
             <div className="col-span-12 sm:col-span-6">
               <Project
                 title="X8C"
@@ -177,21 +198,20 @@ const projects = () => {
             </div>
             <div className="col-span-12 sm:col-span-6">
               <Project
+                title="Kairos Web3 Music"
+                image={kairos}
+                link="https://www.kairosmusic.io/"
+                type="Web3 Music"
+                github="private"
+              />
+            </div>
+            <div className="col-span-12 sm:col-span-6">
+              <Project
                 title="Aakhyaan : An Online Education Platform"
                 image={aakhyaan_proj}
                 link="https://aakhyaan.org/"
                 type="Organizational"
                 github="private"
-              />
-            </div>
-            <div className="col-span-12">
-              <FeaturedProject
-                title="Job Xa | An Online Job platform"
-                image={jobxa_proj}
-                summary="Job Xa is an online job platform that connects the client and worker together."
-                link="https://online-job-portal.vercel.app/"
-                type="Featured Project"
-                github="https://github.com/sachin-sapkota/online-job-portal"
               />
             </div>
             <div className="col-span-12 sm:col-span-6">
@@ -203,6 +223,7 @@ const projects = () => {
                 github="https://github.com/sachin-sapkota/detour-website"
               />
             </div>
+
             <div className="col-span-12 sm:col-span-6">
               <Project
                 title="Clinic Expert"
