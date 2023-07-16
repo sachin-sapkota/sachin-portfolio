@@ -7,6 +7,9 @@ import Link from 'next/link';
 import { LinkArrow } from '@/src/components/icons';
 import Hireme from '@/src/components/Hireme';
 import TransitionEffect from '@/src/components/TransitionEffect';
+import bg_image from '../src/assets/herobg.png';
+import { motion } from 'framer-motion';
+
 export default function Home() {
   return (
     <>
@@ -18,19 +21,30 @@ export default function Home() {
         />
       </Head>
       <TransitionEffect />
-      <main className="flex items-center text-dark w-full min-h-screen dark:text-light ">
+      <main className="flex items-center text-dark w-full min-h-screen dark:text-light  relative pt-20">
+        <div className="absolute inset-0 ">
+          <Image
+            src={bg_image}
+            alt=""
+            width={2000}
+            height={1200}
+            className="  w-full h-full object-cover  "
+            priority
+          />
+          <div className="absolute inset-0 bg-light dark:bg-transparent"></div>
+        </div>
         <Layout className="h-full sm:px-8 px-4 md:px-12  lg:px-16 xl:px-20   ">
           <div className="flex items-start justify-between w-full flex-col lg:flex-row lg:justify-start   lg:items-center  ">
             <div className=" w-full flex justify-center  ">
               <Image
                 src={sachinPic}
                 alt=""
-                className="lg:w-full  w-3/4 h-auto inline-block  sm:inline-block  "
+                className="lg:w-full  w-3/5 h-4/5 inline-block  sm:inline-block  "
                 priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
               />
             </div>
-            <div className="w-full flex flex-col items-start  justify-start  text-center lg:text-left  h-full sm:pt-5 pt-3   ">
+            <div className="w-full flex flex-col items-start  justify-start  text-center lg:text-left  h-full sm:pt-5 pt-3 bg-hero-pattern   ">
               <AnimatedText
                 text="Turning Vision into reality with code and design."
                 classname=" text-3xl text-center 2xl:text-7xl  lg:text-left lg:text-6xl  sm:text-5xl pb-1"
@@ -61,6 +75,23 @@ export default function Home() {
           </div>
         </Layout>
         <Hireme />
+        <div className="absolute bottom-3 w-full flex justify-center items-center opacity-40">
+          <a href="#about">
+            <div className="w-8 h-14 rounded-3xl border-4 border-secondary flex justify-center items-start ">
+              <motion.div
+                animate={{
+                  y: [0, 24, 0],
+                }}
+                transition={{
+                  duration: 1.7,
+                  repeat: Infinity,
+                  repeatType: 'loop',
+                }}
+                className="w-3 h-3 bg-secondary my-1 rounded-full"
+              ></motion.div>
+            </div>
+          </a>
+        </div>
       </main>
     </>
   );

@@ -4,9 +4,7 @@ interface LayoutType {
 }
 const Layout = ({ children, className = '' }: LayoutType) => {
   return (
-    <div
-      className={`${className} w-full h-full inline-block z-0  dark:bg-dark  `}
-    >
+    <div className={`${className} w-full h-full inline-block z-0    `}>
       {children}
     </div>
   );

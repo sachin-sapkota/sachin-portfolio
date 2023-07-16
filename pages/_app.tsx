@@ -18,7 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main
-        className={`${montserrat.variable} dark:bg-dark  bg-light w-full min-h-screen font-sans  scrollbar scrollbar-thumb-gray-900 scrollbar-track-gray-100`}
+        className={`${montserrat.variable} dark:bg-primary  bg-light w-full min-h-screen font-mont relative`}
       >
         <ThemeProvider>
           <NavBar />

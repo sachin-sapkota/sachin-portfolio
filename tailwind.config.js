@@ -2,11 +2,13 @@
 const { fontFamily } = require('tailwindcss/defaultTheme');
 module.exports = {
   darkMode: 'class',
+
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+
   theme: {
     extend: {
       animation: {
@@ -22,8 +24,18 @@ module.exports = {
         primary: '#B63E96', // 240,86,199
         primaryDark: '#58E6D9', // 80,230,217
         bothColor: '#777777',
+        primary: '#050816',
+        secondary: '#aaa6c3',
+        tertiary: '#151030',
+        'black-100': '#100d25',
+        'black-200': '#090325',
+        'white-100': '#f3f3f3',
+      },
+      boxShadow: {
+        card: '0px 35px 120px -15px #211e35',
       },
       backgroundImage: {
+        'hero-pattern': "url('/src/assets/herobg.png')",
         circularLight:
           'repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#f5f5f5 5px,#f5f5f5 100px)',
 
@@ -48,7 +60,9 @@ module.exports = {
         circularDarkSm:
           'repeating-radial-gradient(rgba(255,255,255,0.5) 4px,#1b1b1b 8px,#1b1b1b 40px)',
       },
-
+      screens: {
+        xs: '450px',
+      },
       boxShadow: {
         '3xl': '0 15px 15px 1px rgba(80,230,217, 0.4)',
       },
