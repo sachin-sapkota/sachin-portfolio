@@ -34,7 +34,7 @@ export default function HomePage() {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
             />
           </div>
-          <div className="w-full flex flex-col items-start justify-start text-center lg:text-left h-full sm:pt-5 pt-3 bg-hero-pattern">
+          <div className="w-full flex flex-col items-start justify-start text-center lg:text-left h-full sm:pt-5 pt-3">
             <AnimatedText
               text="Turning Vision into reality with code and design."
               classname="text-3xl text-center 2xl:text-7xl lg:text-left lg:text-6xl sm:text-5xl pb-1"

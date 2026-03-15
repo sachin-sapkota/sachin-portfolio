@@ -64,7 +64,7 @@ const CustomMobileLink = ({
 };
 
 const NavBar = () => {
-  const { mode, mounted, toggleMode } = useThemeContext();
+  const { toggleMode } = useThemeContext();
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -153,21 +153,20 @@ const NavBar = () => {
           <button
             style={{ outline: 'none' }}
             title="Theme Changer"
-            className={`${
-              mounted && mode === 'dark' ? 'bg-light' : 'bg-black'
-            } border-2 border-solid ml-4  flex items-center justify-center rounded-full p-1 select-none `}
+            className="bg-black dark:bg-light border-2 border-solid ml-4 flex items-center justify-center rounded-full p-1 select-none"
             onClick={() => toggleMode()}
           >
-            {mounted && mode === 'dark' ? (
+            <span className="hidden dark:block">
               <Image
                 src="/images/sunIcon.svg"
                 alt="Switch to light mode"
                 width={20}
                 height={20}
               />
-            ) : (
+            </span>
+            <span className="block dark:hidden">
               <MoonIcon />
-            )}
+            </span>
           </button>
         </nav>
       </div>
@@ -240,21 +239,20 @@ const NavBar = () => {
 
             <button
               title="Theme Changer"
-              className={`${
-                mounted && mode === 'dark' ? 'bg-light' : 'bg-black'
-              } border-2 border-solid ml-4  flex items-center justify-center rounded-full p-1 select-none `}
+              className="bg-black dark:bg-light border-2 border-solid ml-4 flex items-center justify-center rounded-full p-1 select-none"
               onClick={() => toggleMode()}
             >
-              {mounted && mode === 'dark' ? (
+              <span className="hidden dark:block">
                 <Image
                   src="/images/sunIcon.svg"
                   alt="Switch to light mode"
                   width={20}
                   height={20}
                 />
-              ) : (
+              </span>
+              <span className="block dark:hidden">
                 <MoonIcon />
-              )}
+              </span>
             </button>
           </nav>
         </motion.div>

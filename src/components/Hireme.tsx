@@ -1,6 +1,5 @@
 "use client";
 
-import { CircularText } from './icons';
 import Link from 'next/link';
 
 const Hireme = () => {

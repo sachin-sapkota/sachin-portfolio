@@ -106,12 +106,6 @@ export const DribbleIcon = ({ className, ...rest }: classnameType) => (
     />
   </svg>
 );
-declare namespace JSX {
-  interface IntrinsicElements {
-    svg: React.SVGProps<SVGSVGElement> & { set?: string };
-  }
-}
-
 export const MoonIcon = ({ className, ...rest }: classnameType) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +113,7 @@ export const MoonIcon = ({ className, ...rest }: classnameType) => (
     height="24"
     viewBox="0 0 24 24"
     {...rest}
-    className={`w-full h-auto `}
+    className={`w-full h-auto ${className ?? ''}`}
   >
     <rect x="0" y="0" width="24" height="24" fill="rgba(255, 255, 255, 0)" />
     <g

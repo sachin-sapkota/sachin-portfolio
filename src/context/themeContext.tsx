@@ -4,15 +4,12 @@ import {
   createContext,
   useContext,
   useEffect,
-  useState,
   type ReactNode,
 } from 'react';
 
 type ThemeMode = 'light' | 'dark';
 
 interface ThemeContextValue {
-  mode: ThemeMode;
-  mounted: boolean;
   toggleMode: () => void;
 }
 
@@ -36,28 +33,22 @@ const getPreferredTheme = (): ThemeMode => {
 };
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [mode, setMode] = useState<ThemeMode>('light');
-  const [mounted, setMounted] = useState(false);
-
   useEffect(() => {
-    const nextMode = getPreferredTheme();
-    setMode(nextMode);
-    applyTheme(nextMode);
-    setMounted(true);
+    applyTheme(getPreferredTheme());
   }, []);
 
   const toggleMode = () => {
-    setMode((currentMode) => {
-      const nextMode = currentMode === 'dark' ? 'light' : 'dark';
-      applyTheme(nextMode);
-      return nextMode;
-    });
+    const nextMode: ThemeMode = document.documentElement.classList.contains(
+      'dark'
+    )
+      ? 'light'
+      : 'dark';
+
+    applyTheme(nextMode);
   };
 
   return (
-    <themeContext.Provider value={{ mode, mounted, toggleMode }}>
-      {children}
-    </themeContext.Provider>
+    <themeContext.Provider value={{ toggleMode }}>{children}</themeContext.Provider>
   );
 };
 
