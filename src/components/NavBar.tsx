@@ -1,27 +1,31 @@
-import { useContext, useState, useRef } from 'react';
+"use client";
+
+import { useState } from 'react';
 import Link from 'next/link';
 import Logo from './Logo';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
+
 interface CustomLinkProps {
   href: string;
   title: string;
-  className?: any;
-  toggle?: any;
+  className?: string;
+  toggle?: () => void;
 }
+
 import { TwitterIcon, GithubIcon, LinkedInIcon, MoonIcon } from './icons';
-import { themeContext } from '../context/themeContext';
+import { useThemeContext } from '../context/themeContext';
 import Image from 'next/image';
 
 const CustomLink = ({ href, title, className = ' ' }: CustomLinkProps) => {
-  const router = useRouter();
+  const pathname = usePathname();
 
   return (
     <Link href={href} className={`${className}   group relative`} title={title}>
       {title}
       <span
         className={`${
-          router.asPath === href ? 'w-full' : 'w-0'
+          pathname === href ? 'w-full' : 'w-0'
         }      rounded-full bg-dark absolute left-0  -bottom-0.5 group-hover:w-full ease-linear duration-300 dark:bg-light`}
         style={{ height: '2px' }}
       >
@@ -36,37 +40,33 @@ const CustomMobileLink = ({
   className = ' ',
   toggle,
 }: CustomLinkProps) => {
-  const router = useRouter();
-  const handleClick = () => {
-    router.push(href);
-    toggle();
-  };
+  const pathname = usePathname();
 
   return (
-    <button
+    <Link
+      href={href}
       style={{ outline: 'none' }}
-      onClick={handleClick}
+      onClick={toggle}
       className={`${className} text-xl font-semibold my-1  group relative`}
       title={title}
     >
       {title}
       <span
         className={`${
-          router.asPath === href ? 'w-full' : 'w-0'
+          pathname === href ? 'w-full' : 'w-0'
         }      rounded-full bg-light dark:bg-dark absolute left-0  -bottom-0.5 group-hover:w-full ease-linear duration-300 `}
         style={{ height: '2px' }}
       >
         &nbsp;
       </span>
-    </button>
+    </Link>
   );
 };
 
 const NavBar = () => {
-  const { mode, toggleMode } = useContext(themeContext);
-  const [isOpen, setIsOpen] = useState<Boolean>(false);
-  const ref1 = useRef<any>(null);
-  const ref2 = useRef<any>(null);
+  const { mode, mounted, toggleMode } = useThemeContext();
+  const [isOpen, setIsOpen] = useState(false);
+
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
@@ -154,12 +154,17 @@ const NavBar = () => {
             style={{ outline: 'none' }}
             title="Theme Changer"
             className={`${
-              mode === 'dark' ? 'bg-light' : 'bg-black'
+              mounted && mode === 'dark' ? 'bg-light' : 'bg-black'
             } border-2 border-solid ml-4  flex items-center justify-center rounded-full p-1 select-none `}
             onClick={() => toggleMode()}
           >
-            {mode === 'dark' ? (
-              <Image src="/images/sunIcon.svg" alt="" width={20} height={20} />
+            {mounted && mode === 'dark' ? (
+              <Image
+                src="/images/sunIcon.svg"
+                alt="Switch to light mode"
+                width={20}
+                height={20}
+              />
             ) : (
               <MoonIcon />
             )}
@@ -236,14 +241,14 @@ const NavBar = () => {
             <button
               title="Theme Changer"
               className={`${
-                mode === 'dark' ? 'bg-light' : 'bg-black'
+                mounted && mode === 'dark' ? 'bg-light' : 'bg-black'
               } border-2 border-solid ml-4  flex items-center justify-center rounded-full p-1 select-none `}
               onClick={() => toggleMode()}
             >
-              {mode === 'dark' ? (
+              {mounted && mode === 'dark' ? (
                 <Image
                   src="/images/sunIcon.svg"
-                  alt=""
+                  alt="Switch to light mode"
                   width={20}
                   height={20}
                 />

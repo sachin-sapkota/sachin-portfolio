@@ -1,8 +1,10 @@
-import React from 'react';
+"use client";
+
 import { motion } from 'framer-motion';
+
 interface animatedTextType {
-  text: String;
-  classname?: any;
+  text: string;
+  classname?: string;
 }
 const quote = {
   initial: {

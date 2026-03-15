@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef } from 'react';
 import { useScroll, motion } from 'framer-motion';
 
@@ -104,7 +106,7 @@ const Experience = () => {
         <motion.div
           style={{ scaleY: scrollYProgress }}
           ref={ref}
-          className="absolute left-1 sm:left-5 md:left-9 top-12  w-1 origin-top bg-bothColor  bottom-0 "
+          className="absolute left-1 sm:left-5 md:left-9 top-12 w-1 origin-top bg-both-color bottom-0"
         />
         <ul className="w-full flex flex-col gap-8 items-start justify-between ">
           <Details

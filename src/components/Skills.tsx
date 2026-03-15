@@ -1,7 +1,7 @@
-import { useRef, useEffect, useState, useContext } from 'react';
+"use client";
+
 import { motion } from 'framer-motion';
-// import useThemeSwitcher from './hooks/useThemeSwitcher';
-import { themeContext } from '../context/themeContext';
+
 interface skillType {
   name: string;
   x: string;
@@ -23,21 +23,13 @@ const Skill = ({ name, x, y }: skillType) => {
   );
 };
 const Skills = () => {
-  const { mode } = useContext(themeContext);
-  const ref = useRef<HTMLDivElement>(null);
-
   return (
     <>
       <h2 className="font-bold lg:text-8xl md:text-7xl text-5xl lg:mt-56 md:mt-32 mt-24 w-full text-center ">
         Skills
       </h2>
       <div
-        ref={ref}
-        className={`${
-          mode === 'dark'
-            ? ' md:bg-circularDarkLg sm:bg-circularDarkMd bg-circularDarkSm   '
-            : 'md:bg-circularLightLg sm:bg-circularLightMd bg-circularLightSm '
-        } w-full lg:h-screen h-96  relative flex items-center justify-center rounded-full  `}
+        className="w-full lg:h-screen h-96 relative flex items-center justify-center rounded-full md:bg-circular-light-lg sm:bg-circular-light-md bg-circular-light-sm dark:md:bg-circular-dark-lg dark:sm:bg-circular-dark-md dark:bg-circular-dark-sm"
       >
         <motion.div
           className="flex items-center justify-center rounded-full font-semibold lg:p-8 md:p-5 sm:p-4 p-2 shadow-sm   text-light cursor-pointer dark:text-dark dark:bg-light bg-dark"

@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef } from 'react';
 import { useScroll, motion } from 'framer-motion';
 
@@ -86,7 +88,7 @@ const Education = () => {
         <motion.div
           style={{ scaleY: scrollYProgress }}
           ref={ref}
-          className="absolute left-1 sm:left-5 md:left-9 top-12  w-1 origin-top bg-bothColor h-full "
+          className="absolute left-1 sm:left-5 md:left-9 top-12 w-1 origin-top bg-both-color h-full"
         />
         <ul className="gap-8 w-full flex flex-col items-start justify-between ">
           <Details
